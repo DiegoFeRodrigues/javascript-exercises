@@ -1,0 +1,24 @@
+
+<!-- Write a function called capitalize that takes
+a string and returns that string with only the first 
+letter capitalized. Make sure that it can take strings 
+that are lowercase, UPPERCASE or BoTh. -->
+
+<html>
+    <body>
+        <script>
+            
+            function capitaliza(texto) {
+                primeiraLetra = texto.charAt(0).toUpperCase()
+                return primeiraLetra + texto.slice(1).toLowerCase() 
+            }
+            
+            console.log(capitaliza("abcdef")) /* TUDO minúsculo */
+            console.log(capitaliza("aBcdef")) /* B maiúsculo */
+            console.log(capitaliza("abcdEf")) /* E maiúsculo */
+            console.log(capitaliza("abCdef")) /* C maiúsculo */
+            console.log(capitaliza("ABCDEF")) /* TUDO maiúsculo */
+
+        </script>
+    </body>
+</html>
