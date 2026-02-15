@@ -11,5 +11,11 @@ function escolhaMaquina() {
             return "Tesoura"
     }
 }
+
+function escolhaJogador() {
+    return prompt("Sua jogada: ")
+}
+
 console.log("Pedra, papel e Tesoura \n\n")
-console.log("Jogada da máquina:", escolhaMaquina())
+console.log("Máquina:", escolhaMaquina())
+console.log("Jogador:", escolhaJogador())
