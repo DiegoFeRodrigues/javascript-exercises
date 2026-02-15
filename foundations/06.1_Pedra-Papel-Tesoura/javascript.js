@@ -12,19 +12,24 @@ function escolhaMaquina() {
     }
 }
 
-function escolhaJogador() {
-    return prompt("Sua jogada: ").toLowerCase()
-}
+// function escolhaJogador() {
+//     return prompt("Sua jogada: ").toLowerCase()
+// }
 
 let pontosMaquina = 0
 let pontosJogador = 0
 
-let maquina = escolhaMaquina()
-let jogador = escolhaJogador()
+// let maquina = escolhaMaquina()
+// let jogador = escolhaJogador()
+
+// HARDCODE TEMPORÁRIO PARA FACILITAR TESTES:
+let maquina = "papel"
+let jogador = "tesoura"
 
 function partida(maquina, jogador) {
     pedraTesoura = "\nPedra amassa tesoura."
     pedraPapel = "\nPapel embrulha pedra."
+    tesouraPapel = "\nTesoura corta papel."
     maquinaVence = " Máquina vence a rodada."
     jogadorVence = " Jogador vence a rodada."
     empate = "\nRodada empatada."
@@ -40,6 +45,18 @@ function partida(maquina, jogador) {
             else {
                 pontosJogador += 1
                 return pedraPapel + jogadorVence
+            }
+        case ("papel"):
+            if (jogador == "tesoura") {
+                pontosJogador += 1
+                return tesouraPapel + jogadorVence
+            }
+            else if (jogador == "papel") {
+                return empate
+            }
+            else {
+                pontosMaquina += 1
+                return pedraPapel + maquinaVence
             }
     }
 }
