@@ -7,5 +7,6 @@ const repeatString = function(texto, numero) {
     return lista.join("");
 }
 console.log(repeatString('hey', 3));
+console.log(repeatString('hello', 10));
 // Do not edit below this line
 module.exports = repeatString;
