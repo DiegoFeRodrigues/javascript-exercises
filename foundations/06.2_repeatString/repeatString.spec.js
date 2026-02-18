@@ -13,7 +13,7 @@ describe('repeatString', () => {
   test('repeats the string 0 times', () => {
     expect(repeatString('bye', 0)).toEqual('');
   });
-  test.skip('handles any non-negative integer for repeat count', function () {
+  test('handles any non-negative integer for repeat count', function () {
     /* This test ensures your function is "generic", meaning the previous
       tests were not completed by hardcoding values for their respective numbers */
     const number = Math.floor(Math.random() * 1000);
