@@ -1,6 +1,6 @@
 
-const lista = [];
 const repeatString = function(texto, numero) {
+    const lista = [];
     for (let cont = 0; cont < numero; cont++) {
         lista.push(texto); 
     }
