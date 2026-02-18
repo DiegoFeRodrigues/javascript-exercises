@@ -19,7 +19,7 @@ describe('repeatString', () => {
     const number = Math.floor(Math.random() * 1000);
     expect(repeatString('hey', number)).toBe('hey'.repeat(number));
   });
-  test.skip('does not use the built-in String repeat method', () => {
+  test('does not use the built-in String repeat method', () => {
     /* Even though there is a built-in String repeat method,
       in this exercise specifically, we want you to practise using loops */
     jest.spyOn(String.prototype, 'repeat').mockName('Built-in String repeat method');
