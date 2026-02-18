@@ -16,5 +16,6 @@ console.log(repeatString('hi', 1));
 console.log(repeatString('bye', 0));
 console.log(repeatString('hey', 3));
 console.log(repeatString('hey', -3));
+console.log(repeatString('', 10));
 // Do not edit below this line
 module.exports = repeatString;
