@@ -7,6 +7,8 @@ const sumAll = function(primeiroValor, segundoValor) {
 };
 
 console.log(sumAll(2, 4));
+console.log(sumAll(1, 4000));
+// console.log();
 
 // Do not edit below this line
 module.exports = sumAll;
