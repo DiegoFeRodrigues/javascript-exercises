@@ -1,6 +1,15 @@
 const sumAll = function(primeiroValor, segundoValor) {
     let soma = 0;
-    for (let cont = primeiroValor; cont <= segundoValor; cont++) {
+    let maiorValor = 0;
+    let menorValor = 0;
+    if (primeiroValor > segundoValor) {
+        menorValor = segundoValor;
+        maiorValor = primeiroValor;
+    } else {
+        menorValor = primeiroValor;
+        maiorValor = segundoValor;
+    }
+    for (let cont = menorValor; cont <= maiorValor; cont++) {
         soma += cont;
     }
     return soma;
@@ -8,6 +17,16 @@ const sumAll = function(primeiroValor, segundoValor) {
 
 console.log(sumAll(2, 4));
 console.log(sumAll(1, 4000));
+console.log(sumAll(123, 1));
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log();
 // console.log();
 
 // Do not edit below this line
