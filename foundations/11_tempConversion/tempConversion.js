@@ -3,13 +3,18 @@ const convertToCelsius = function(temperatura) {
   return Math.round(conversor * 10) / 10;
 };
 
-const convertToFahrenheit = function() {
+const convertToFahrenheit = function(temperatura) {
+  const conversor = (temperatura * 9 / 5) + 32;
+  return Math.round(conversor * 10) / 10;
 };
 
 console.log(convertToCelsius(32));
 console.log(convertToCelsius(100));
 console.log(convertToCelsius(-73.3));
-// console.log(convertToCelsius());
+
+console.log(convertToFahrenheit(0));
+console.log(convertToFahrenheit(73.3));
+console.log(convertToFahrenheit(-10));
 
 // Do not edit below this line
 module.exports = {
