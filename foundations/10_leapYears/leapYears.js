@@ -3,8 +3,7 @@ const leapYears = function(ano) {
     const divisivelPor4 = ano % 4 === 0; 
     const divisivelPor400 = ano % 400 === 0; 
 
-    return !seculo && divisivelPor4 || 
-            seculo && divisivelPor400 ? true : false;
+    return !seculo && divisivelPor4 || divisivelPor400 ? true : false;
 
     /* 
     outra forma - meio poluída, dificulta a leitura:
