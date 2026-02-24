@@ -30,8 +30,13 @@ const divConteudo = document.createElement("div");
 divConteudo.classList.add("divConteudo");
 divConteudo.style.border = "2px solid black";
 divConteudo.style["background-color"] = "pink";
-corpoPagina.appendChild(divConteudo);
 
 const h1EmDiv = document.createElement("h1");
 h1EmDiv.textContent = "Título h1 dentro de uma div!";
 divConteudo.appendChild(h1EmDiv);
+
+const paragrafoEmDiv = document.createElement("p");
+paragrafoEmDiv.textContent = "Parágrafo também dentro de div!";
+divConteudo.appendChild(paragrafoEmDiv);
+
+corpoPagina.appendChild(divConteudo);
