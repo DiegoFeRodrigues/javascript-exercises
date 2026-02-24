@@ -31,3 +31,7 @@ divConteudo.classList.add("divConteudo");
 divConteudo.style.border = "2px solid black";
 divConteudo.style["background-color"] = "pink";
 corpoPagina.appendChild(divConteudo);
+
+const h1EmDiv = document.createElement("h1");
+h1EmDiv.textContent = "Título h1 dentro de uma div!";
+divConteudo.appendChild(h1EmDiv);
