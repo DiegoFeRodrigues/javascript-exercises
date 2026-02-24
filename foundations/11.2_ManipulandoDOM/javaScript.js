@@ -25,3 +25,9 @@ tituloH3.classList.add("tituloH3");
 tituloH3.textContent = "Título h3 em azul.";
 tituloH3.style.color = "#0202f6";
 corpoPagina.appendChild(tituloH3);
+
+const divConteudo = document.createElement("div");
+divConteudo.classList.add("divConteudo");
+divConteudo.style.border = "2px solid black";
+divConteudo.style["background-color"] = "pink";
+corpoPagina.appendChild(divConteudo);
