@@ -1,0 +1,24 @@
+
+<!-- Separando JS e HTML
+Iniciando propriedades de on<tipoDeEvento> (onclick, onmousedown, etc...)
+de nós do DOM no JavaScript.
+Essa solução já é um pouco melhor que a anterior já que separa o JS do HTML, mas
+o problema de poder definir apenas um evento "onclick" por cada 
+elemento do DOM ainda permanece. -->
+
+<html>
+    <head>
+        <script src="javaScript.js" defer></script>
+    </head>
+    <body id="corpo"></body>
+</html>
+
+<!-- versão simplificada - Elemento criado direto no HTML e com id: -->
+<!-- <html>
+    <head>
+        <script src="javaScript.js" defer></script>
+    </head>
+    <body>
+        <button id="botao">BOTÃO!!</button>
+    </body>
+</html> -->
