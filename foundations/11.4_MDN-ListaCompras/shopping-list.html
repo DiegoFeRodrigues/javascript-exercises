@@ -36,11 +36,16 @@
       const botao = document.querySelector("button");
 
       botao.addEventListener("click", (evento) => {
+
         evento.preventDefault(); // evita que formulário envie o input ao clicar no botão, recarregando a página.
+
         let inputRecebido = input.value;
         console.log(inputRecebido);
         inputRecebido = "";
-        console.log(inputRecebido);
+
+        let itemLista = document.createElement("li");
+        let span = document.createElement("span");
+        let botaoDelete = document.createElement("button");
       });
     </script>
   </body>
