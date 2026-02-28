@@ -42,6 +42,7 @@
         evento.preventDefault(); 
 
         let inputRecebido = input.value;
+        input.value = "";
 
         let itemLista = document.createElement("li");
         let span = document.createElement("span");
@@ -55,10 +56,9 @@
         botaoDelete.textContent = "Delete";
         
         lista.appendChild(itemLista);
-
-        inputRecebido = "";
-
+        
         botaoDelete.addEventListener("click", () => lista.removeChild(itemLista));
+        
       });
     </script>
   </body>
