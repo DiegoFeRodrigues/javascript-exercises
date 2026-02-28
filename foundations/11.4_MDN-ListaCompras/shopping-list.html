@@ -45,7 +45,10 @@
 
         let itemLista = document.createElement("li");
         let span = document.createElement("span");
-        let botaoDelete = document.createElement("button");
+        const botaoDelete = document.createElement("button");
+
+        itemLista.appendChild(span);
+        itemLista.appendChild(botaoDelete);
       });
     </script>
   </body>
