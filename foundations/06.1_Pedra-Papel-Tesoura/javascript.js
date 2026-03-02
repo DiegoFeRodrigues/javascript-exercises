@@ -1,5 +1,4 @@
 
-console.log("Pedra, papel e Tesoura \n\n")
 
 let pontosMaquina = 0
 let pontosJogador = 0
@@ -16,9 +15,6 @@ function escolhaMaquina() {
     }
 }
 
-function escolhaJogador() {
-    return prompt("Jogador, faça sua jogada: ").toLowerCase()
-}
 
 const maquina = escolhaMaquina()
 const jogador = escolhaJogador()
