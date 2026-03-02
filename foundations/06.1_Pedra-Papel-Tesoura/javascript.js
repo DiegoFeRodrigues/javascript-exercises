@@ -15,9 +15,25 @@ function escolhaMaquina() {
     }
 }
 
+const conteinerDiv = document.querySelector("#div");
+conteinerDiv.style.display = "flex";
+conteinerDiv.style.gap = "10px";
+
+const botaoPedraJogador = document.createElement("button");
+botaoPedraJogador.textContent = "Pedra";
+
+const botaoPapelJogador = document.createElement("button");
+botaoPapelJogador.textContent = "Papel";
+
+const botaoTesouraJogador = document.createElement("button");
+botaoTesouraJogador.textContent = "Tesoura";
+
+conteinerDiv.appendChild(botaoPedraJogador);
+conteinerDiv.appendChild(botaoPapelJogador);
+conteinerDiv.appendChild(botaoTesouraJogador);
 
 const maquina = escolhaMaquina()
-const jogador = escolhaJogador()
+// // const jogador = escolhaJogador()
 
 function partida(maquina, jogador) {
     pedraTesoura = "\nPedra amassa tesoura."
