@@ -7,11 +7,11 @@ function escolhaMaquina() {
     maquinaEscolheu = Math.floor(Math.random() * 3)
     switch (maquinaEscolheu) {
         case 0:
-            return "pedra"
+            return "Pedra"
         case 1:
-            return "papel"
+            return "Papel"
         case 2:
-            return "tesoura"
+            return "Tesoura"
     }
 }
 
@@ -32,9 +32,6 @@ conteinerDiv.appendChild(botaoPedraJogador);
 conteinerDiv.appendChild(botaoPapelJogador);
 conteinerDiv.appendChild(botaoTesouraJogador);
 
-const maquina = escolhaMaquina()
-// // const jogador = escolhaJogador()
-
 function partida(maquina, jogador) {
     pedraTesoura = "\nPedra amassa tesoura."
     pedraPapel = "\nPapel embrulha pedra."
@@ -43,31 +40,31 @@ function partida(maquina, jogador) {
     jogadorVence = " Jogador vence a rodada."
     empate = "\nRodada empatada."
     switch (maquina) {
-        case ("pedra"):
-            if (jogador == "tesoura") {
+        case ("Pedra"):
+            if (jogador == "Tesoura") {
                 pontosMaquina += 1
                 return pedraTesoura + maquinaVence
-            } else if (jogador == "pedra") {
+            } else if (jogador == "Pedra") {
                 return empate
             } else {
                 pontosJogador += 1
                 return pedraPapel + jogadorVence
             } 
-        case ("papel"):
-            if (jogador == "tesoura") {
+        case ("Papel"):
+            if (jogador == "Tesoura") {
                 pontosJogador += 1
                 return tesouraPapel + jogadorVence
-            } else if (jogador == "papel") {
+            } else if (jogador == "Papel") {
                 return empate
             } else {
                 pontosMaquina += 1
                 return pedraPapel + maquinaVence
             }
-        case ("tesoura"):
-            if (jogador == "pedra") {
+        case ("Tesoura"):
+            if (jogador == "Pedra") {
                 pontosJogador += 1
                 return pedraTesoura + jogadorVence
-            } else if (jogador == "tesoura") {
+            } else if (jogador == "Tesoura") {
                 return empate
             } else {
                 pontosMaquina += 1
@@ -77,14 +74,20 @@ function partida(maquina, jogador) {
             return "Jogada inválida."
     }
 }
-
-console.log("Jogadas:")
-console.log("Máquina:", maquina)
-console.log("Jogador:", jogador)
-console.log(partida(maquina, jogador))
-console.log("\nPlacar:")
-console.log("Pontuação da máquina:", pontosMaquina)
-console.log("Pontuação do jogador:", pontosJogador, "\n\n")
+conteinerDiv.addEventListener("click", (evento) => {
+    const maquina = escolhaMaquina();
+    const jogador = evento.target.textContent;
+    console.log("\nJogada da máquina: " + maquina);
+    console.log("Sua jogada: " + jogador);
+    console.log(partida(maquina, jogador));
+});
+// console.log("Jogadas:")
+// console.log("Máquina:", maquina)
+// console.log("Jogador:", jogador)
+// console.log(partida(maquina, jogador))
+// console.log("\nPlacar:")
+// console.log("Pontuação da máquina:", pontosMaquina)
+// console.log("Pontuação do jogador:", pontosJogador, "\n\n")
 
 
 // console.log("\n\nFim de jogo.")
