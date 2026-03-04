@@ -15,22 +15,23 @@ function escolhaMaquina() {
     }
 }
 
-const conteinerDiv = document.querySelector("#div");
-conteinerDiv.style.display = "flex";
-conteinerDiv.style.gap = "10px";
+const conteinerBotoes = document.querySelector("#div");
+conteinerBotoes.style.marginLeft = "10px";
 
 const botaoPedraJogador = document.createElement("button");
 botaoPedraJogador.textContent = "Pedra";
+botaoPedraJogador.style.marginRight = "20px";
 
 const botaoPapelJogador = document.createElement("button");
 botaoPapelJogador.textContent = "Papel";
+botaoPapelJogador.style.marginRight = "20px";
 
 const botaoTesouraJogador = document.createElement("button");
 botaoTesouraJogador.textContent = "Tesoura";
 
-conteinerDiv.appendChild(botaoPedraJogador);
-conteinerDiv.appendChild(botaoPapelJogador);
-conteinerDiv.appendChild(botaoTesouraJogador);
+conteinerBotoes.appendChild(botaoPedraJogador);
+conteinerBotoes.appendChild(botaoPapelJogador);
+conteinerBotoes.appendChild(botaoTesouraJogador);
 
 function partida(maquina, jogador) {
     pedraTesoura = "\nPedra amassa tesoura."
@@ -74,13 +75,24 @@ function partida(maquina, jogador) {
             return "Jogada inválida."
     }
 }
-conteinerDiv.addEventListener("click", (evento) => {
+conteinerBotoes.addEventListener("click", (evento) => {
     const maquina = escolhaMaquina();
     const jogador = evento.target.textContent;
-    console.log("\nJogada da máquina: " + maquina);
+
+    console.log();
     console.log("Sua jogada: " + jogador);
     console.log(partida(maquina, jogador));
+
+    const conteinerResultado = document.createElement("div");
+    conteinerBotoes.appendChild(conteinerResultado);
+
+    const paraMaquina = document.createElement("p");
+    paraMaquina.textContent = "\nJogada da máquina: " + maquina;
+
+    conteinerResultado.appendChild(paraMaquina);
 });
+
+
 // console.log("Jogadas:")
 // console.log("Máquina:", maquina)
 // console.log("Jogador:", jogador)
