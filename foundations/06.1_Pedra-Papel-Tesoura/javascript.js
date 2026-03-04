@@ -15,6 +15,9 @@ function escolhaMaquina() {
     }
 }
 
+const estiloTexto = document.querySelector(".texto");
+estiloTexto.style.fontFamily = "Arial";
+
 const conteinerBotoes = document.querySelector("#div");
 conteinerBotoes.style.marginLeft = "10px";
 
@@ -92,7 +95,7 @@ conteinerBotoes.addEventListener("click", (evento) => {
     resultadoRodada.textContent = partida(maquina, jogador);
 
     const linhaFimRodada = document.createElement("h3");
-    linhaFimRodada.textContent = "---------------------------------------------------"
+    linhaFimRodada.textContent = "-----------------------------------------------------------"
 
     conteinerResultado.appendChild(paraMaquina);
     conteinerResultado.appendChild(paraJogador);
