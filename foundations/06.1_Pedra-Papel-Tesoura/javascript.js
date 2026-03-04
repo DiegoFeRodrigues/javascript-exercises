@@ -105,6 +105,15 @@ conteinerBotoes.addEventListener("click", (evento) => {
     conteinerResultado.appendChild(resultadoRodada);
     conteinerResultado.appendChild(placarTemp);
     conteinerResultado.appendChild(linhaFimRodada);
+
+    // Limpa conteinerResultado ao clicar em um botão:
+    /* conteinerBotoes.addEventListener("click", () => {
+        conteinerResultado.removeChild(paraMaquina);
+        conteinerResultado.removeChild(paraJogador);
+        conteinerResultado.removeChild(resultadoRodada);
+        conteinerResultado.removeChild(placarTemp);
+        conteinerResultado.removeChild(linhaFimRodada);
+    }); */
 });
 
 
