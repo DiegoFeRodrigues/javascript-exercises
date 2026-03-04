@@ -79,17 +79,25 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const maquina = escolhaMaquina();
     const jogador = evento.target.textContent;
 
-    console.log();
-    console.log("Sua jogada: " + jogador);
-    console.log(partida(maquina, jogador));
-
     const conteinerResultado = document.createElement("div");
     conteinerBotoes.appendChild(conteinerResultado);
 
-    const paraMaquina = document.createElement("p");
+    const paraMaquina = document.createElement("h4");
     paraMaquina.textContent = "\nJogada da máquina: " + maquina;
 
+    const paraJogador = document.createElement("h4");
+    paraJogador.textContent = "Sua jogada: " + jogador;
+
+    const resultadoRodada = document.createElement("h4");
+    resultadoRodada.textContent = partida(maquina, jogador);
+
+    const linhaFimRodada = document.createElement("h3");
+    linhaFimRodada.textContent = "---------------------------------------------------"
+
     conteinerResultado.appendChild(paraMaquina);
+    conteinerResultado.appendChild(paraJogador);
+    conteinerResultado.appendChild(resultadoRodada);
+    conteinerResultado.appendChild(linhaFimRodada);
 });
 
 
