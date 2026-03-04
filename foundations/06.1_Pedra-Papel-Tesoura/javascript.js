@@ -78,12 +78,13 @@ function partida(maquina, jogador) {
             return "Jogada inválida."
     }
 }
+
+const conteinerResultado = document.createElement("div");
+conteinerBotoes.appendChild(conteinerResultado);
+
 conteinerBotoes.addEventListener("click", (evento) => {
     const maquina = escolhaMaquina();
     const jogador = evento.target.textContent;
-
-    const conteinerResultado = document.createElement("div");
-    conteinerBotoes.appendChild(conteinerResultado);
 
     const paraMaquina = document.createElement("h4");
     paraMaquina.textContent = "\nJogada da máquina: " + maquina;
@@ -105,6 +106,10 @@ conteinerBotoes.addEventListener("click", (evento) => {
     conteinerResultado.appendChild(resultadoRodada);
     conteinerResultado.appendChild(placarTemp);
     conteinerResultado.appendChild(linhaFimRodada);
+
+    if (pontosMaquina == 5 || pontosJogador == 5) {
+        conteinerBotoes.removeChild(conteinerResultado);
+    }
 
     // Limpa conteinerResultado ao clicar em um botão:
     /* conteinerBotoes.addEventListener("click", () => {
