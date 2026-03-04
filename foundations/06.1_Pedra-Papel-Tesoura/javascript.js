@@ -94,12 +94,16 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const resultadoRodada = document.createElement("h4");
     resultadoRodada.textContent = partida(maquina, jogador);
 
-    const linhaFimRodada = document.createElement("h3");
+    const placarTemp = document.createElement("h3")
+    placarTemp.textContent = "Placar: Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
+    
+    const linhaFimRodada = document.createElement("div");
     linhaFimRodada.textContent = "-----------------------------------------------------------"
-
+    
     conteinerResultado.appendChild(paraMaquina);
     conteinerResultado.appendChild(paraJogador);
     conteinerResultado.appendChild(resultadoRodada);
+    conteinerResultado.appendChild(placarTemp);
     conteinerResultado.appendChild(linhaFimRodada);
 });
 
