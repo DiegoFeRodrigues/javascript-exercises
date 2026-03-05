@@ -128,7 +128,27 @@ conteinerBotoes.addEventListener("click", (evento) => {
     conteinerResultado.appendChild(linhaFimRodada);
 
     if (pontosMaquina == 5 || pontosJogador == 5) {
+
+        corpoPagina.removeChild(conteinerInicio);
+        corpoPagina.removeChild(conteinerBotoes);
         conteinerBotoes.removeChild(conteinerResultado);
+        
+        const conteinerFinal = document.createElement("div");
+        conteinerFinal.classList.add("conteinerFinal");
+        corpoPagina.appendChild(conteinerFinal);
+
+        const tituloFinal = document.createElement("h1");
+        tituloFinal.textContent = "Fim de jogo."
+
+        const placarFinal = document.createElement("h2");
+        placarFinal.textContent = "Placar final:";
+
+        const placar = document.createElement("h2");
+        placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
+
+        conteinerFinal.appendChild(tituloFinal)
+        conteinerFinal.appendChild(placarFinal)
+        conteinerFinal.appendChild(placar)
     }
 
     // Limpa conteinerResultado ao clicar em um botão:
