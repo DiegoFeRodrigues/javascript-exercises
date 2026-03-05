@@ -1,25 +1,29 @@
 
 
-let pontosMaquina = 0
-let pontosJogador = 0
+const corpoPagina = document.querySelector(".conteinerCorpo");
+corpoPagina.style.fontFamily = "Arial";
 
-function escolhaMaquina() {
-    maquinaEscolheu = Math.floor(Math.random() * 3)
-    switch (maquinaEscolheu) {
-        case 0:
-            return "Pedra"
-        case 1:
-            return "Papel"
-        case 2:
-            return "Tesoura"
-    }
-}
+const conteinerInicio = document.createElement("div");
+conteinerInicio.classList.add("conteinerInicio");
+corpoPagina.appendChild(conteinerInicio);
 
-const estiloTexto = document.querySelector(".texto");
-estiloTexto.style.fontFamily = "Arial";
+const titulo = document.createElement("h1");
+titulo.textContent = "Pedra, papel e tesoura";
 
-const conteinerBotoes = document.querySelector("#div");
+const instrucoes = document.createElement("h3");
+instrucoes.textContent = "Dispute esse jogo clássico com a máquina. Vence quem fizer 5 pontos primeiro."
+
+const jogadaJogador = document.createElement("h3");
+jogadaJogador.textContent = "Sua jogada:";
+
+conteinerInicio.appendChild(titulo);
+conteinerInicio.appendChild(instrucoes);
+conteinerInicio.appendChild(jogadaJogador);
+
+const conteinerBotoes = document.createElement("div");
+conteinerBotoes.classList.add("conteinerBotoes");
 conteinerBotoes.style.marginLeft = "10px";
+corpoPagina.appendChild(conteinerBotoes);
 
 const botaoPedraJogador = document.createElement("button");
 botaoPedraJogador.textContent = "Pedra";
@@ -35,6 +39,21 @@ botaoTesouraJogador.textContent = "Tesoura";
 conteinerBotoes.appendChild(botaoPedraJogador);
 conteinerBotoes.appendChild(botaoPapelJogador);
 conteinerBotoes.appendChild(botaoTesouraJogador);
+
+let pontosMaquina = 0
+let pontosJogador = 0
+
+function escolhaMaquina() {
+    maquinaEscolheu = Math.floor(Math.random() * 3)
+    switch (maquinaEscolheu) {
+        case 0:
+            return "Pedra"
+        case 1:
+            return "Papel"
+        case 2:
+            return "Tesoura"
+    }
+}
 
 function partida(maquina, jogador) {
     pedraTesoura = "\nPedra amassa tesoura."
@@ -80,6 +99,7 @@ function partida(maquina, jogador) {
 }
 
 const conteinerResultado = document.createElement("div");
+conteinerResultado.classList.add("conteinerResultados");
 conteinerBotoes.appendChild(conteinerResultado);
 
 conteinerBotoes.addEventListener("click", (evento) => {
@@ -99,7 +119,7 @@ conteinerBotoes.addEventListener("click", (evento) => {
     placarTemp.textContent = "Placar: Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
     
     const linhaFimRodada = document.createElement("div");
-    linhaFimRodada.textContent = "-----------------------------------------------------------"
+    linhaFimRodada.textContent = "----------------------------------------------------------------------"
     
     conteinerResultado.appendChild(paraMaquina);
     conteinerResultado.appendChild(paraJogador);
