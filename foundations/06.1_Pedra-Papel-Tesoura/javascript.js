@@ -138,18 +138,29 @@ conteinerBotoes.addEventListener("click", (evento) => {
         corpoPagina.appendChild(conteinerFinal);
 
         const tituloFinal = document.createElement("h1");
-        tituloFinal.textContent = "Fim de jogo."
+        tituloFinal.textContent = "Fim de jogo"
 
         const placarFinal = document.createElement("h2");
         placarFinal.textContent = "Placar final:";
 
-        const placar = document.createElement("h2");
+        const placar = document.createElement("h3");
         placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
 
         conteinerFinal.appendChild(tituloFinal)
         conteinerFinal.appendChild(placarFinal)
         conteinerFinal.appendChild(placar)
+
+        if (pontosMaquina > pontosJogador) {
+            const maquinaVence = document.createElement("h2");
+            maquinaVence.textContent = "A máquina venceu a partida. Tente novamente, jogador."
+            conteinerFinal.appendChild(maquinaVence);
+        } else {
+            const jogadorVence = document.createElement("h2");
+            jogadorVence.textContent = "O jogador venceu a partida."
+            conteinerFinal.appendChild(jogadorVence)
+        }
     }
+});
 
     // Limpa conteinerResultado ao clicar em um botão:
     /* conteinerBotoes.addEventListener("click", () => {
@@ -159,26 +170,3 @@ conteinerBotoes.addEventListener("click", (evento) => {
         conteinerResultado.removeChild(placarTemp);
         conteinerResultado.removeChild(linhaFimRodada);
     }); */
-});
-
-
-// console.log("Jogadas:")
-// console.log("Máquina:", maquina)
-// console.log("Jogador:", jogador)
-// console.log(partida(maquina, jogador))
-// console.log("\nPlacar:")
-// console.log("Pontuação da máquina:", pontosMaquina)
-// console.log("Pontuação do jogador:", pontosJogador, "\n\n")
-
-
-// console.log("\n\nFim de jogo.")
-// console.log("\nPlacar final:")
-// console.log("Jogador", pontosJogador, "x", pontosMaquina, "Máquina")
-
-// if (pontosMaquina > pontosJogador) {
-// console.log("A máquina venceu a partida. Tente novamente, jogador.")
-// } else if (pontosMaquina == pontosJogador) {
-// console.log("A Partida terminou empatada.")
-// } else {
-// console.log("O jogador venceu a partida.")
-// }
