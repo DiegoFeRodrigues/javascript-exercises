@@ -2,6 +2,7 @@
 
 const corpoPagina = document.querySelector(".conteinerCorpo");
 corpoPagina.style.fontFamily = "Arial";
+corpoPagina.style.marginLeft = "20px";
 
 const conteinerInicio = document.createElement("div");
 conteinerInicio.classList.add("conteinerInicio");
@@ -22,7 +23,6 @@ conteinerInicio.appendChild(jogadaJogador);
 
 const conteinerBotoes = document.createElement("div");
 conteinerBotoes.classList.add("conteinerBotoes");
-conteinerBotoes.style.marginLeft = "10px";
 corpoPagina.appendChild(conteinerBotoes);
 
 const botaoPedraJogador = document.createElement("button");
@@ -102,9 +102,15 @@ const conteinerResultado = document.createElement("div");
 conteinerResultado.classList.add("conteinerResultados");
 conteinerBotoes.appendChild(conteinerResultado);
 
+let contaRodada = 1;
+
 conteinerBotoes.addEventListener("click", (evento) => {
     const maquina = escolhaMaquina();
     const jogador = evento.target.textContent;
+
+    const mostraRodada = document.createElement("h2");
+    mostraRodada.textContent = contaRodada + "ª rodada:"
+    contaRodada += 1;
 
     const paraMaquina = document.createElement("h4");
     paraMaquina.textContent = "\nJogada da máquina: " + maquina;
@@ -121,11 +127,21 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const linhaFimRodada = document.createElement("div");
     linhaFimRodada.textContent = "----------------------------------------------------------------------"
     
+    conteinerResultado.appendChild(mostraRodada);
     conteinerResultado.appendChild(paraMaquina);
     conteinerResultado.appendChild(paraJogador);
     conteinerResultado.appendChild(resultadoRodada);
     conteinerResultado.appendChild(placarTemp);
     conteinerResultado.appendChild(linhaFimRodada);
+
+    conteinerBotoes.addEventListener("click", () => {
+            conteinerResultado.removeChild(mostraRodada);
+            conteinerResultado.removeChild(paraMaquina);
+            conteinerResultado.removeChild(paraJogador);
+            conteinerResultado.removeChild(resultadoRodada);
+            conteinerResultado.removeChild(placarTemp);
+            conteinerResultado.removeChild(linhaFimRodada);
+        });
 
     if (pontosMaquina == 5 || pontosJogador == 5) {
 
@@ -152,21 +168,12 @@ conteinerBotoes.addEventListener("click", (evento) => {
 
         if (pontosMaquina > pontosJogador) {
             const maquinaVence = document.createElement("h2");
-            maquinaVence.textContent = "A máquina venceu a partida. Tente novamente, jogador."
+            maquinaVence.textContent = `A máquina venceu a partida na ${contaRodada}ª rodada. Tente novamente, jogador.`
             conteinerFinal.appendChild(maquinaVence);
         } else {
             const jogadorVence = document.createElement("h2");
-            jogadorVence.textContent = "O jogador venceu a partida."
+            jogadorVence.textContent = `O jogador venceu a partida na ${contaRodada}ª rodada.`
             conteinerFinal.appendChild(jogadorVence)
         }
     }
 });
-
-    // Limpa conteinerResultado ao clicar em um botão:
-    /* conteinerBotoes.addEventListener("click", () => {
-        conteinerResultado.removeChild(paraMaquina);
-        conteinerResultado.removeChild(paraJogador);
-        conteinerResultado.removeChild(resultadoRodada);
-        conteinerResultado.removeChild(placarTemp);
-        conteinerResultado.removeChild(linhaFimRodada);
-    }); */
