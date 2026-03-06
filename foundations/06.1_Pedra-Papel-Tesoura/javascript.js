@@ -14,7 +14,7 @@ titulo.textContent = "Pedra, papel e tesoura";
 const instrucoes = document.createElement("h3");
 instrucoes.textContent = "Dispute esse jogo clássico com a máquina. Vence quem fizer 5 pontos primeiro."
 
-const jogadaJogador = document.createElement("h3");
+const jogadaJogador = document.createElement("h2");
 jogadaJogador.textContent = "Sua jogada:";
 
 conteinerInicio.appendChild(titulo);
@@ -112,16 +112,16 @@ conteinerBotoes.addEventListener("click", (evento) => {
     mostraRodada.textContent = contaRodada + "ª rodada:"
     contaRodada += 1;
 
-    const paraMaquina = document.createElement("h4");
+    const paraMaquina = document.createElement("h3");
     paraMaquina.textContent = "\nJogada da máquina: " + maquina;
 
-    const paraJogador = document.createElement("h4");
+    const paraJogador = document.createElement("h3");
     paraJogador.textContent = "Sua jogada: " + jogador;
 
-    const resultadoRodada = document.createElement("h4");
+    const resultadoRodada = document.createElement("h3");
     resultadoRodada.textContent = partida(maquina, jogador);
 
-    const placarTemp = document.createElement("h3")
+    const placarTemp = document.createElement("h2")
     placarTemp.textContent = "Placar: Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
     
     const linhaFimRodada = document.createElement("div");
@@ -159,21 +159,22 @@ conteinerBotoes.addEventListener("click", (evento) => {
         const placarFinal = document.createElement("h2");
         placarFinal.textContent = "Placar final:";
 
-        const placar = document.createElement("h3");
+        const placar = document.createElement("h2");
         placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
 
         conteinerFinal.appendChild(tituloFinal)
-        conteinerFinal.appendChild(placarFinal)
-        conteinerFinal.appendChild(placar)
 
         if (pontosMaquina > pontosJogador) {
-            const maquinaVence = document.createElement("h2");
+            const maquinaVence = document.createElement("h3");
             maquinaVence.textContent = `A máquina venceu a partida na ${contaRodada}ª rodada. Tente novamente, jogador.`
             conteinerFinal.appendChild(maquinaVence);
         } else {
-            const jogadorVence = document.createElement("h2");
+            const jogadorVence = document.createElement("h3");
             jogadorVence.textContent = `O jogador venceu a partida na ${contaRodada}ª rodada.`
             conteinerFinal.appendChild(jogadorVence)
         }
+
+        conteinerFinal.appendChild(placarFinal)
+        conteinerFinal.appendChild(placar)
     }
 });
