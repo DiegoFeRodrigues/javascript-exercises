@@ -40,6 +40,13 @@ conteinerBotoes.appendChild(botaoPedraJogador);
 conteinerBotoes.appendChild(botaoPapelJogador);
 conteinerBotoes.appendChild(botaoTesouraJogador);
 
+const cssBotoes = document.querySelectorAll("button");
+cssBotoes.forEach(item => {
+    item.style.marginRight = "20px";
+    item.style.padding = "20px";
+    item.style.fontSize = "15px";
+});
+
 let pontosMaquina = 0
 let pontosJogador = 0
 
