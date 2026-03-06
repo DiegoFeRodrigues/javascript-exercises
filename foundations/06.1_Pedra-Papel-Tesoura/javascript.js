@@ -42,9 +42,9 @@ conteinerBotoes.appendChild(botaoTesouraJogador);
 
 const cssBotoes = document.querySelectorAll("button");
 cssBotoes.forEach(item => {
-    item.style.marginRight = "20px";
+    item.style.marginRight = "35px";
     item.style.padding = "20px";
-    item.style.fontSize = "15px";
+    item.style.fontSize = "20px";
 });
 
 let pontosMaquina = 0
