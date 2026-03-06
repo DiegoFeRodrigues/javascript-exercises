@@ -134,20 +134,19 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const linhaFimRodada = document.createElement("div");
     linhaFimRodada.textContent = "----------------------------------------------------------------------"
     
-    conteinerResultado.appendChild(mostraRodada);
-    conteinerResultado.appendChild(paraMaquina);
-    conteinerResultado.appendChild(paraJogador);
-    conteinerResultado.appendChild(resultadoRodada);
-    conteinerResultado.appendChild(placarTemp);
-    conteinerResultado.appendChild(linhaFimRodada);
+    const juntaResultados = document.createElement("div");
+
+    juntaResultados.appendChild(mostraRodada);
+    juntaResultados.appendChild(paraMaquina);
+    juntaResultados.appendChild(paraJogador);
+    juntaResultados.appendChild(resultadoRodada);
+    juntaResultados.appendChild(placarTemp);
+    juntaResultados.appendChild(linhaFimRodada);
+
+    conteinerResultado.appendChild(juntaResultados);
 
     conteinerBotoes.addEventListener("click", () => {
-            conteinerResultado.removeChild(mostraRodada);
-            conteinerResultado.removeChild(paraMaquina);
-            conteinerResultado.removeChild(paraJogador);
-            conteinerResultado.removeChild(resultadoRodada);
-            conteinerResultado.removeChild(placarTemp);
-            conteinerResultado.removeChild(linhaFimRodada);
+            conteinerResultado.removeChild(juntaResultados);
         });
 
     if (pontosMaquina == 5 || pontosJogador == 5) {
@@ -165,10 +164,10 @@ conteinerBotoes.addEventListener("click", (evento) => {
 
         const placarFinal = document.createElement("h2");
         placarFinal.textContent = "Placar final:";
-
+        
         const placar = document.createElement("h2");
         placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
-
+        
         conteinerFinal.appendChild(tituloFinal)
 
         if (pontosMaquina > pontosJogador) {
