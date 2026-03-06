@@ -169,6 +169,9 @@ conteinerBotoes.addEventListener("click", (evento) => {
         placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
         
         conteinerFinal.appendChild(tituloFinal)
+        conteinerFinal.appendChild(paraMaquina);
+        conteinerFinal.appendChild(paraJogador);
+        conteinerFinal.appendChild(resultadoRodada);
 
         if (pontosMaquina > pontosJogador) {
             const maquinaVence = document.createElement("h3");
