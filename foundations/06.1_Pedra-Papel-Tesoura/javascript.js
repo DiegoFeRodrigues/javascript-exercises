@@ -3,6 +3,7 @@
 const corpoPagina = document.querySelector(".conteinerCorpo");
 corpoPagina.style.fontFamily = "Arial";
 corpoPagina.style.marginLeft = "20px";
+corpoPagina.style.textAlign = "center";
 
 const conteinerInicio = document.createElement("div");
 conteinerInicio.classList.add("conteinerInicio");
