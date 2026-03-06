@@ -54,54 +54,54 @@ function escolhaMaquina() {
     maquinaEscolheu = Math.floor(Math.random() * 3)
     switch (maquinaEscolheu) {
         case 0:
-            return "Pedra"
+            return "Pedra";
         case 1:
-            return "Papel"
+            return "Papel";
         case 2:
-            return "Tesoura"
+            return "Tesoura";
     }
 }
 
 function partida(maquina, jogador) {
-    pedraTesoura = "\nPedra amassa tesoura."
-    pedraPapel = "\nPapel embrulha pedra."
-    tesouraPapel = "\nTesoura corta papel."
-    maquinaVence = " Máquina vence a rodada."
-    jogadorVence = " Jogador vence a rodada."
-    empate = "\nRodada empatada."
+    pedraTesoura = "\nPedra amassa tesoura.";
+    pedraPapel = "\nPapel embrulha pedra.";
+    tesouraPapel = "\nTesoura corta papel.";
+    maquinaVence = " Máquina vence a rodada.";
+    jogadorVence = " Jogador vence a rodada.";
+    empate = "\nRodada empatada.";
     switch (maquina) {
         case ("Pedra"):
             if (jogador == "Tesoura") {
                 pontosMaquina += 1
-                return pedraTesoura + maquinaVence
+                return pedraTesoura + maquinaVence;
             } else if (jogador == "Pedra") {
                 return empate
             } else {
                 pontosJogador += 1
-                return pedraPapel + jogadorVence
+                return pedraPapel + jogadorVence;
             } 
         case ("Papel"):
             if (jogador == "Tesoura") {
                 pontosJogador += 1
-                return tesouraPapel + jogadorVence
+                return tesouraPapel + jogadorVence;
             } else if (jogador == "Papel") {
                 return empate
             } else {
                 pontosMaquina += 1
-                return pedraPapel + maquinaVence
+                return pedraPapel + maquinaVence;
             }
         case ("Tesoura"):
             if (jogador == "Pedra") {
                 pontosJogador += 1
-                return pedraTesoura + jogadorVence
+                return pedraTesoura + jogadorVence;
             } else if (jogador == "Tesoura") {
                 return empate
             } else {
                 pontosMaquina += 1
-                return tesouraPapel + maquinaVence
+                return tesouraPapel + maquinaVence;
             }
         default:
-            return "Jogada inválida."
+            return "Jogada inválida.";
     }
 }
 
@@ -116,7 +116,7 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const jogador = evento.target.textContent;
 
     const mostraRodada = document.createElement("h2");
-    mostraRodada.textContent = contaRodada + "ª rodada:"
+    mostraRodada.textContent = contaRodada + "ª rodada:";
     contaRodada += 1;
 
     const paraMaquina = document.createElement("h3");
@@ -128,7 +128,7 @@ conteinerBotoes.addEventListener("click", (evento) => {
     const resultadoRodada = document.createElement("h3");
     resultadoRodada.textContent = partida(maquina, jogador);
 
-    const placarTemp = document.createElement("h2")
+    const placarTemp = document.createElement("h2");
     placarTemp.textContent = "Placar: Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
     
     const linhaFimRodada = document.createElement("div");
@@ -160,7 +160,7 @@ conteinerBotoes.addEventListener("click", (evento) => {
         corpoPagina.appendChild(conteinerFinal);
 
         const tituloFinal = document.createElement("h1");
-        tituloFinal.textContent = "Fim de jogo"
+        tituloFinal.textContent = "Fim de jogo";
 
         const placarFinal = document.createElement("h2");
         placarFinal.textContent = "Placar final:";
@@ -168,22 +168,22 @@ conteinerBotoes.addEventListener("click", (evento) => {
         const placar = document.createElement("h2");
         placar.textContent = "Máquina " + pontosMaquina + " x " + pontosJogador + " Jogador";
         
-        conteinerFinal.appendChild(tituloFinal)
+        conteinerFinal.appendChild(tituloFinal);
         conteinerFinal.appendChild(paraMaquina);
         conteinerFinal.appendChild(paraJogador);
         conteinerFinal.appendChild(resultadoRodada);
 
         if (pontosMaquina > pontosJogador) {
             const maquinaVence = document.createElement("h3");
-            maquinaVence.textContent = `A máquina venceu a partida na ${contaRodada}ª rodada. Tente novamente, jogador.`
+            maquinaVence.textContent = `A máquina venceu a partida na ${contaRodada}ª rodada. Tente novamente, jogador.`;
             conteinerFinal.appendChild(maquinaVence);
         } else {
             const jogadorVence = document.createElement("h3");
-            jogadorVence.textContent = `O jogador venceu a partida na ${contaRodada}ª rodada.`
-            conteinerFinal.appendChild(jogadorVence)
+            jogadorVence.textContent = `O jogador venceu a partida na ${contaRodada}ª rodada.`;
+            conteinerFinal.appendChild(jogadorVence);
         }
 
-        conteinerFinal.appendChild(placarFinal)
-        conteinerFinal.appendChild(placar)
+        conteinerFinal.appendChild(placarFinal);
+        conteinerFinal.appendChild(placar);
     }
 });
