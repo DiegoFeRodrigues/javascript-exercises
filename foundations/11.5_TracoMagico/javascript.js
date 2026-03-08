@@ -25,9 +25,19 @@ function grid(tamanho) {
     
             divColuna.addEventListener("mouseover", () => {divColuna.style.backgroundColor = "white"});
         }
-
-        divGridPadrao.appendChild(divLinha);
+        if (tamanho == tamanhoGridPadrao) {
+            divGridPadrao.appendChild(divLinha);
+        } else {
+            divGrid.appendChild(divLinha);
+        }
     }
 }
 
 grid(tamanhoGridPadrao);
+
+const botaoTamanho = document.querySelector(".botaoTamanho");
+botaoTamanho.addEventListener("click", () => {
+    divGrid.removeChild(divGridPadrao);
+    const tamanhoEscolhido = prompt("Digite o tamanho desejado:");
+    grid(tamanhoEscolhido);
+})
