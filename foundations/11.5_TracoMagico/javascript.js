@@ -6,6 +6,10 @@ const divGrid = document.querySelector(".divGrid");
 
 const tamanhoGridPadrao = 16;
 
+const divGridPadrao = document.createElement("div");
+divGridPadrao.classList.add("gridPadrao");
+divGrid.appendChild(divGridPadrao);
+
 function grid(tamanho) {
     for (let linha = 0; linha < tamanho; linha++) {
         const divLinha = document.createElement("div");
@@ -21,7 +25,8 @@ function grid(tamanho) {
     
             divColuna.addEventListener("mouseover", () => {divColuna.style.backgroundColor = "white"});
         }
-        divGrid.appendChild(divLinha);
+
+        divGridPadrao.appendChild(divLinha);
     }
 }
 
