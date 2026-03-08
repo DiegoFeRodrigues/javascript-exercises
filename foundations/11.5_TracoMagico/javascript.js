@@ -1,5 +1,6 @@
 
 const corpoPagina = document.querySelector("#corpoPagina");
+corpoPagina.style.fontFamily = "Arial";
 
 const divGrid = document.querySelector(".divGrid");
 
