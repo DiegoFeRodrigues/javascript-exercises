@@ -14,6 +14,8 @@ for (let linha = 0; linha < 16; linha++) {
         divColuna.style.width = "10px";
         divColuna.style.border = "1px solid white";
         divLinha.appendChild(divColuna);
+
+        divColuna.addEventListener("mouseover", () => {divColuna.style.backgroundColor = "white"});
     }
 
     divGrid.appendChild(divLinha);
