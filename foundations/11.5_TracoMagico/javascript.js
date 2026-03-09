@@ -2,6 +2,8 @@
 const corpoPagina = document.querySelector("#corpoPagina");
 corpoPagina.style.fontFamily = "Arial";
 
+const msgUsuario = document.querySelector(".msgUsuario");
+
 const divGrid = document.querySelector(".divGrid");
 
 const tamanhoGridPadrao = 16;
@@ -38,6 +40,12 @@ grid(tamanhoGridPadrao);
 const botaoTamanho = document.querySelector(".botaoTamanho");
 botaoTamanho.addEventListener("click", () => {
     divGrid.removeChild(divGridPadrao);
-    const tamanhoEscolhido = prompt("Digite o tamanho desejado:");
+    corpoPagina.removeChild(document.querySelector("p"));
+    corpoPagina.removeChild(document.querySelector("button"));
+    let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo é 100):")
+    while (tamanhoEscolhido > 100) {
+        tamanhoEscolhido = prompt("O tamanho máximo é 100. Digite o tamanho desejado:")
+    }
+    msgUsuario.textContent = `Quadro com tamanho ${tamanhoEscolhido} x ${tamanhoEscolhido}:`
     grid(tamanhoEscolhido);
 })
