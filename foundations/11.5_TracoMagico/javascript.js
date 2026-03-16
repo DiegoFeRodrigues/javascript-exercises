@@ -1,6 +1,10 @@
 
 const corpoPagina = document.querySelector("#corpoPagina");
 corpoPagina.style.fontFamily = "Arial";
+corpoPagina.style.display = "flex";
+corpoPagina.style.flexDirection = "column";
+corpoPagina.style.alignItems = "center";
+corpoPagina.style.minHeight = "100vh";
 
 const msgUsuario = document.querySelector(".msgUsuario");
 
@@ -8,6 +12,9 @@ const divGrid = document.querySelector(".divGrid");
 divGrid.style.height = "700px";
 divGrid.style.width = "700px";
 divGrid.style.overflow = "hidden";
+divGrid.style.display = "flex";
+divGrid.style.flexDirection = "column";
+divGrid.style.alignItems = "center";
 divGrid.style.border = "3px solid red";
 
 const tamanhoGridPadrao = 16;
