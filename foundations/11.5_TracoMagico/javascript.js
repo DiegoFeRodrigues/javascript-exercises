@@ -4,18 +4,19 @@ corpoPagina.style.fontFamily = "Arial";
 corpoPagina.style.display = "flex";
 corpoPagina.style.flexDirection = "column";
 corpoPagina.style.alignItems = "center";
-corpoPagina.style.minHeight = "100vh";
+corpoPagina.style.maxHeight = "100vh";
+corpoPagina.style.margin = "0";
 
 const msgUsuario = document.querySelector(".msgUsuario");
 
 const divGrid = document.querySelector(".divGrid");
-divGrid.style.height = "700px";
-divGrid.style.width = "700px";
+divGrid.style.height = "745px";
+divGrid.style.width = "745px";
 divGrid.style.overflow = "hidden";
 divGrid.style.display = "flex";
 divGrid.style.flexDirection = "column";
 divGrid.style.alignItems = "center";
-divGrid.style.border = "3px solid red";
+divGrid.style.marginTop = "10px";
 
 const tamanhoGridPadrao = 16;
 
@@ -51,12 +52,14 @@ grid(tamanhoGridPadrao);
 const botaoTamanho = document.querySelector(".botaoTamanho");
 botaoTamanho.addEventListener("click", () => {
     divGrid.removeChild(divGridPadrao);
-    corpoPagina.removeChild(document.querySelector("p"));
-    corpoPagina.removeChild(document.querySelector("button"));
     let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo é 100):")
     while (tamanhoEscolhido > 100) {
         tamanhoEscolhido = prompt("O tamanho máximo é 100. Digite o tamanho desejado:")
     }
-    msgUsuario.textContent = `Quadro com tamanho ${tamanhoEscolhido} x ${tamanhoEscolhido}:`
+    const msgTamanhoEscolhido = document.createElement("h4");
+    msgUsuario.appendChild(msgTamanhoEscolhido);
+    msgTamanhoEscolhido.textContent = `Quadro com tamanho ${tamanhoEscolhido} x ${tamanhoEscolhido}:`
+    document.querySelectorAll("p").forEach(para => msgUsuario.removeChild(para));
+    corpoPagina.removeChild(document.querySelector("button"));
     grid(tamanhoEscolhido);
 })
