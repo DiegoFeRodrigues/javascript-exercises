@@ -5,6 +5,10 @@ corpoPagina.style.fontFamily = "Arial";
 const msgUsuario = document.querySelector(".msgUsuario");
 
 const divGrid = document.querySelector(".divGrid");
+divGrid.style.height = "700px";
+divGrid.style.width = "700px";
+divGrid.style.overflow = "hidden";
+divGrid.style.border = "3px solid red";
 
 const tamanhoGridPadrao = 16;
 
