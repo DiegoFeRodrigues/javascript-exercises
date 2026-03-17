@@ -1,6 +1,7 @@
 
 const corpoPagina = document.querySelector("#corpoPagina");
 corpoPagina.style.fontFamily = "Arial";
+corpoPagina.style.color = "3D3D3D";
 corpoPagina.style.display = "flex";
 corpoPagina.style.flexDirection = "column";
 corpoPagina.style.alignItems = "center";
@@ -55,6 +56,13 @@ function grid(tamanho) {
 grid(tamanhoGridPadrao);
 
 const botaoTamanho = document.querySelector(".botaoTamanho");
+botaoTamanho.style.padding = "9px";
+botaoTamanho.style.borderRadius = "16px";
+botaoTamanho.style.backgroundColor = "black";
+botaoTamanho.style.color = "lightGrey";
+botaoTamanho.style.fontSize = "16px";
+botaoTamanho.style.fontWeight = "700";
+botaoTamanho.style.border = "1px solid darkGrey"
 botaoTamanho.addEventListener("click", () => {
     divGrid.removeChild(divGridPadrao);
     let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo é 100):")
