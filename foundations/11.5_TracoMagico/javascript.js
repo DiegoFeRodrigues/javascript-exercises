@@ -6,6 +6,7 @@ corpoPagina.style.display = "flex";
 corpoPagina.style.flexDirection = "column";
 corpoPagina.style.alignItems = "center";
 corpoPagina.style.maxHeight = "100vh";
+corpoPagina.style.minHeight = "100vh";
 corpoPagina.style.margin = "0";
 corpoPagina.style.backgroundColor = "lightGrey";
 
@@ -35,8 +36,8 @@ function grid(tamanho) {
         for (let coluna = 0; coluna < tamanho; coluna++) {
             const divColuna = document.createElement("div");
             divColuna.style.backgroundColor = "white";
-            divColuna.style.height = "7px";
-            divColuna.style.width = "7px";
+            divColuna.style.height = "6px";
+            divColuna.style.width = "6px";
             divColuna.style.border = "1px solid lightGrey";
             divLinha.appendChild(divColuna);
     
