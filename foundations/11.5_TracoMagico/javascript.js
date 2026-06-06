@@ -28,6 +28,10 @@ const divGridPadrao = document.createElement("div");
 divGridPadrao.classList.add("gridPadrao");
 divGrid.appendChild(divGridPadrao);
 
+function nAleatorio(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
 function grid(tamanho) {
     for (let linha = 0; linha < tamanho; linha++) {
         const divLinha = document.createElement("div");
@@ -42,8 +46,9 @@ function grid(tamanho) {
             divLinha.appendChild(divColuna);
     
             divColuna.addEventListener("mouseover", () => {
-                divColuna.style.backgroundColor = "black"
-                divColuna.style.border = "1px solid black"
+                const corAleatoria = `rgb(${nAleatorio(255)} ${nAleatorio(255)} ${nAleatorio(255)})`;
+                divColuna.style.backgroundColor = corAleatoria;
+                divColuna.style.border = "1px solid black";
             });
         }
         if (tamanho == tamanhoGridPadrao) {
