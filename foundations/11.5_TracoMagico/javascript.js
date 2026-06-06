@@ -33,6 +33,9 @@ function nAleatorio(number) {
 }
 
 function grid(tamanho) {
+
+    let opacidadeInicialQuadrados = 1;
+
     for (let linha = 0; linha < tamanho; linha++) {
         const divLinha = document.createElement("div");
         divLinha.style.display = "flex";
@@ -49,6 +52,7 @@ function grid(tamanho) {
                 const corAleatoria = `rgb(${nAleatorio(255)} ${nAleatorio(255)} ${nAleatorio(255)})`;
                 divColuna.style.backgroundColor = corAleatoria;
                 divColuna.style.border = "1px solid black";
+                divColuna.style.opacity = opacidadeInicialQuadrados -= 0.1;
             });
         }
         if (tamanho == tamanhoGridPadrao) {
