@@ -10,7 +10,14 @@ corpoPagina.style.minHeight = "100vh";
 corpoPagina.style.margin = "0";
 corpoPagina.style.backgroundColor = "lightGrey";
 
-const msgUsuario = document.querySelector(".msgUsuario");
+const botaoTamanho = document.querySelector(".botaoTamanho");
+botaoTamanho.style.padding = "9px";
+botaoTamanho.style.borderRadius = "16px";
+botaoTamanho.style.backgroundColor = "black";
+botaoTamanho.style.color = "lightGrey";
+botaoTamanho.style.fontSize = "16px";
+botaoTamanho.style.fontWeight = "700";
+botaoTamanho.style.border = "1px solid darkGrey"
 
 const tamanhoGridPadrao = 16;
 
@@ -21,6 +28,17 @@ function nAleatorio(number) {
 function grid(tamanho) {
 
     let opacidadeInicialQuadrados = 1;
+    
+    const msgTamanhoEscolhido = document.createElement("h5");
+    msgTamanhoEscolhido.classList = "msgUsuario";
+    msgTamanhoEscolhido.style.margin = "20 0 0";
+    if (tamanho === tamanhoGridPadrao) {
+        msgTamanhoEscolhido.textContent = `Quadro com tamanho padrão (${tamanho}px x ${tamanho}px):`
+    } else {
+        msgTamanhoEscolhido.textContent = `Quadro com tamanho ${tamanho}px x ${tamanho}px:`
+    }
+
+    corpoPagina.appendChild(msgTamanhoEscolhido);
 
     const divGrid = document.createElement("div");
     divGrid.classList = "divGrid";
@@ -60,19 +78,9 @@ function grid(tamanho) {
 
 grid(tamanhoGridPadrao);
 
-const botaoTamanho = document.querySelector(".botaoTamanho");
-botaoTamanho.style.padding = "9px";
-botaoTamanho.style.borderRadius = "16px";
-botaoTamanho.style.backgroundColor = "black";
-botaoTamanho.style.color = "lightGrey";
-botaoTamanho.style.fontSize = "16px";
-botaoTamanho.style.fontWeight = "700";
-botaoTamanho.style.border = "1px solid darkGrey"
-
 botaoTamanho.addEventListener("click", () => {
     
     let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo: 100):")
-
     while (tamanhoEscolhido > 100 || tamanhoEscolhido === "" && tamanhoEscolhido != null) {
         tamanhoEscolhido = prompt("Erro: Tamanho inválido." +
         "\nO tamanho máximo é 100." +
@@ -82,12 +90,14 @@ botaoTamanho.addEventListener("click", () => {
     }
 
     if (tamanhoEscolhido != null) {
-        const msgTamanhoEscolhido = document.createElement("h4");
-        msgUsuario.appendChild(msgTamanhoEscolhido);
-        msgTamanhoEscolhido.textContent = `Quadro com tamanho ${tamanhoEscolhido}px x ${tamanhoEscolhido}px:`
-        document.querySelectorAll("p").forEach(para => msgUsuario.removeChild(para));
+        const divMsgUsuarioAntiga = document.querySelector(".msgUsuario");
+        corpoPagina.removeChild(divMsgUsuarioAntiga);
+
         const divGridAntiga = document.querySelector(".divGrid");
         corpoPagina.removeChild(divGridAntiga);
-        grid(tamanhoEscolhido);
+
+        let converteTamanhoNumero = Number(tamanhoEscolhido);
+
+        grid(converteTamanhoNumero);
     }
 })
