@@ -71,16 +71,23 @@ botaoTamanho.style.border = "1px solid darkGrey"
 
 botaoTamanho.addEventListener("click", () => {
     
-    const divGridAntiga = document.querySelector(".divGrid");
-    corpoPagina.removeChild(divGridAntiga);
+    let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo: 100):")
 
-    let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo é 100):")
-    while (tamanhoEscolhido > 100) {
-        tamanhoEscolhido = prompt("O tamanho máximo é 100. Digite o tamanho desejado:")
+    while (tamanhoEscolhido > 100 || tamanhoEscolhido === "" && tamanhoEscolhido != null) {
+        tamanhoEscolhido = prompt("Erro: Tamanho inválido." +
+        "\nO tamanho máximo é 100." +
+        "\nCampo obrigatório. Não deixe em branco." +
+        "\nCancele para manter o tamanho atual." +
+        "\nOu digite o novo tamanho desejado:");
     }
-    const msgTamanhoEscolhido = document.createElement("h4");
-    msgUsuario.appendChild(msgTamanhoEscolhido);
-    msgTamanhoEscolhido.textContent = `Quadro com tamanho ${tamanhoEscolhido}px x ${tamanhoEscolhido}px:`
-    document.querySelectorAll("p").forEach(para => msgUsuario.removeChild(para));
-    grid(tamanhoEscolhido);
+
+    if (tamanhoEscolhido != null) {
+        const msgTamanhoEscolhido = document.createElement("h4");
+        msgUsuario.appendChild(msgTamanhoEscolhido);
+        msgTamanhoEscolhido.textContent = `Quadro com tamanho ${tamanhoEscolhido}px x ${tamanhoEscolhido}px:`
+        document.querySelectorAll("p").forEach(para => msgUsuario.removeChild(para));
+        const divGridAntiga = document.querySelector(".divGrid");
+        corpoPagina.removeChild(divGridAntiga);
+        grid(tamanhoEscolhido);
+    }
 })
