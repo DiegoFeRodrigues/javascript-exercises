@@ -49,7 +49,8 @@ function grid(tamanho) {
     divGrid.style.flexDirection = "column";
     divGrid.style.alignItems = "center";
     divGrid.style.marginTop = "10px";
-    divGrid.style.border = "10px double black";
+    divGrid.style.border = "10px double darkgrey";
+    divGrid.style.backgroundColor = "black";
 
     corpoPagina.appendChild(divGrid);
 
