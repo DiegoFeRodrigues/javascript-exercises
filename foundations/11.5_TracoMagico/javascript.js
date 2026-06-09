@@ -13,11 +13,11 @@ corpoPagina.style.backgroundColor = "lightGrey";
 const botaoTamanho = document.querySelector(".botaoTamanho");
 botaoTamanho.style.padding = "9px";
 botaoTamanho.style.borderRadius = "16px";
-botaoTamanho.style.backgroundColor = "black";
-botaoTamanho.style.color = "lightGrey";
+botaoTamanho.style.backgroundColor = "#292929";
+botaoTamanho.style.color = "white";
 botaoTamanho.style.fontSize = "16px";
 botaoTamanho.style.fontWeight = "700";
-botaoTamanho.style.border = "1px solid darkGrey"
+botaoTamanho.style.border = "2px solid white"
 
 const tamanhoGridPadrao = 16;
 
@@ -49,7 +49,7 @@ function grid(tamanho) {
     divGrid.style.flexDirection = "column";
     divGrid.style.alignItems = "center";
     divGrid.style.marginTop = "10px";
-    divGrid.style.border = "10px double darkgrey";
+    divGrid.style.border = "7px ridge #292929";
     divGrid.style.backgroundColor = "black";
 
     corpoPagina.appendChild(divGrid);
