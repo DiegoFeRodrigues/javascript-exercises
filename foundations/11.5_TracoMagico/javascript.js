@@ -82,23 +82,24 @@ grid(tamanhoGridPadrao);
 botaoTamanho.addEventListener("click", () => {
     
     let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo: 100):")
-    while (tamanhoEscolhido > 100 || tamanhoEscolhido === "" && tamanhoEscolhido != null) {
+
+    while (tamanhoEscolhido < 0 || tamanhoEscolhido > 100 
+        || tamanhoEscolhido === "" || !Number.isInteger(+tamanhoEscolhido)
+        && tamanhoEscolhido != null) {
         tamanhoEscolhido = prompt("Erro: Tamanho inválido." +
-        "\nO tamanho máximo é 100." +
+        "\nO tamanho máximo é 100. Digite apenas números inteiros." +
         "\nCampo obrigatório. Não deixe em branco." +
         "\nCancele para manter o tamanho atual." +
         "\nOu digite o novo tamanho desejado:");
     }
 
-    if (tamanhoEscolhido != null) {
+    if (tamanhoEscolhido != null && Number.isInteger(+tamanhoEscolhido)) {
         const divMsgUsuarioAntiga = document.querySelector(".msgUsuario");
         corpoPagina.removeChild(divMsgUsuarioAntiga);
 
         const divGridAntiga = document.querySelector(".divGrid");
         corpoPagina.removeChild(divGridAntiga);
 
-        let converteTamanhoNumero = Number(tamanhoEscolhido);
-
-        grid(converteTamanhoNumero);
+        grid(+tamanhoEscolhido);
     }
 })
