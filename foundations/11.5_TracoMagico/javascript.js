@@ -1,14 +1,14 @@
 
 const corpoPagina = document.querySelector("#corpoPagina");
 corpoPagina.style.fontFamily = "Arial";
-corpoPagina.style.color = "3D3D3D";
+corpoPagina.style.color = "#b3b2b2";
 corpoPagina.style.display = "flex";
 corpoPagina.style.flexDirection = "column";
 corpoPagina.style.alignItems = "center";
 corpoPagina.style.maxHeight = "100vh";
 corpoPagina.style.minHeight = "100vh";
 corpoPagina.style.margin = "0";
-corpoPagina.style.backgroundColor = "lightGrey";
+corpoPagina.style.backgroundColor = "#292929";
 
 const botaoTamanho = document.querySelector(".botaoTamanho");
 botaoTamanho.style.padding = "9px";
@@ -84,8 +84,7 @@ botaoTamanho.addEventListener("click", () => {
     let tamanhoEscolhido = prompt("Informe o tamanho desejado (máximo: 100):")
 
     while (tamanhoEscolhido < 0 || tamanhoEscolhido > 100 
-        || tamanhoEscolhido === "" || !Number.isInteger(+tamanhoEscolhido)
-        && tamanhoEscolhido != null) {
+        || tamanhoEscolhido === "" || !Number.isInteger(+tamanhoEscolhido)) {
         tamanhoEscolhido = prompt("Erro: Tamanho inválido." +
         "\nO tamanho máximo é 100. Digite apenas números inteiros." +
         "\nCampo obrigatório. Não deixe em branco." +
@@ -93,7 +92,7 @@ botaoTamanho.addEventListener("click", () => {
         "\nOu digite o novo tamanho desejado:");
     }
 
-    if (tamanhoEscolhido != null && Number.isInteger(+tamanhoEscolhido)) {
+    if (tamanhoEscolhido != null) {
         const divMsgUsuarioAntiga = document.querySelector(".msgUsuario");
         corpoPagina.removeChild(divMsgUsuarioAntiga);
 
