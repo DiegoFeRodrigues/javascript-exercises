@@ -28,6 +28,13 @@
 
       alert( usersMapped[0].id ) // 1
       alert( usersMapped[0].nomeCompleto) // John Smith
+
+      usersMapped.map(cadaObjeto => {
+        alert(
+          `ID de usuário: ${cadaObjeto["id"]}
+          \nNome completo: ${cadaObjeto["nomeCompleto"]}`
+        )
+      })
     </script>
   </body>
 </html>
