@@ -13,7 +13,10 @@
 
         let users = [ john, pete, mary ];
 
-        let usersMapped = /* ... your code ... */
+        let usersMapped = users.map(objeto => ({
+          nomeCompleto: `${objeto["name"]} ${objeto["surname"]}`,
+          id: objeto["id"]
+        }));
 
             /*
 usersMapped = [
@@ -24,7 +27,7 @@ usersMapped = [
              */
 
         alert( usersMapped[0].id ) // 1
-        alert( usersMapped[0].fullName ) // John Smith
+        alert( usersMapped[0].nomeCompleto) // John Smith
    </script>
 </body>
 </html>
