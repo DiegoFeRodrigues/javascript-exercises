@@ -8,6 +8,12 @@
 
         let arr = [john, pete, mary];
 
+        function getAverageAge(array) {
+            const somaIdades = array.reduce((soma, atual) => soma + atual["age"], 0)
+            const media = somaIdades / array.length;
+            return media;
+        };
+
         alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
     </script>
 </body>
