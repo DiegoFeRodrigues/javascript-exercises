@@ -8,6 +8,10 @@
 
         let arr = [pete, john, mary];
 
+        function sortByAge(array) {
+            array.sort((obj1, obj2) => obj1["age"] - obj2["age"]);
+        };
+
         sortByAge(arr);
 
         // now: [john, mary, pete]
