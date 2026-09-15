@@ -16,7 +16,24 @@
                 objeto[usuario.id].push(usuario);
                 return objeto;
             }, {})
-       }
+        }
+
+        /*
+        solução do site (mais enxuta e elegante):
+        function groupById(array) {
+            return array.reduce((obj, value) => {
+                obj[value.id] = value;
+                return obj;
+            }, {})
+        }
+        */
+
+        /*
+        usando groupBy() (meio moderno. Apenas pra registro já que o exercício pedia o uso do reduce):
+        function groupById(array) {
+           return Object.groupBy(array, (array) => array.id);
+        }
+        */
 
         let usersById = groupById(users);
 
