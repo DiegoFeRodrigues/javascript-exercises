@@ -8,9 +8,21 @@
             { id: 'pete', name: "Pete Peterson", age: 31 },
         ];
 
+        function groupById(array) {
+            return array.reduce((objeto, usuario) => {
+                if (!objeto[usuario.id]) {
+                    objeto[usuario.id] = [];
+                }
+                objeto[usuario.id].push(usuario);
+                return objeto;
+            }, {})
+       }
+
         let usersById = groupById(users);
 
-        /*
+        console.log(usersById);
+
+       /*
         // after the call we should have:
         
         usersById = {
