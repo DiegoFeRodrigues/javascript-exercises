@@ -3,11 +3,11 @@ const fibonacci = function(numero) {
   if (numero == 0) {
     return 0;
   }
-  if (numero < 1) {
+  if (numero < 0) {
     return "OOPS";
   }
-  let lista = [1, 1];
-  for (let indice = 2; indice < numero; indice++) {
+  let lista = [0, 1];
+  for (let indice = 2; indice <= numero; indice++) {
     lista.push(lista[indice-1] + lista[indice-2]);
   }
   return lista.reverse()[0];
