@@ -1,8 +1,5 @@
 
 const fibonacci = function(numero) {
-  if (numero == 0) {
-    return 0;
-  }
   if (numero < 0) {
     return "OOPS";
   }
@@ -10,7 +7,7 @@ const fibonacci = function(numero) {
   for (let indice = 2; indice <= numero; indice++) {
     lista.push(lista[indice-1] + lista[indice-2]);
   }
-  return lista.reverse()[0];
+  return lista[numero];
 };
 
 fibonacci(4);
