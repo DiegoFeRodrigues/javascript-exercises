@@ -1,7 +1,7 @@
 
 const findTheOldest = function(listaPessoas) {
   listaPessoas.filter(function (pessoa) {
-    if ('yearOfDeath' in pessoa == false) {
+    if (!pessoa.yearOfDeath) {
       const dataAtual = new Date;
       pessoa.yearOfDeath = dataAtual.getFullYear();
     }
